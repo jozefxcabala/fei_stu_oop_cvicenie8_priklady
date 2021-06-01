@@ -73,7 +73,7 @@ public class MyPanel1 extends JPanel implements ItemListener {
             this.canvas.setColor(Color.GREEN);
         }
         else if(e.getItem().toString().equals("SINGLE INPUT")){
-            System.out.println("ENTER COLOR");
+            System.out.println("COLOR IS NOT CHANGED");
         }
         else{
             String[] newColor = splitString(e.getItem().toString());

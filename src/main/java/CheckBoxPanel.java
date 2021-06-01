@@ -31,27 +31,35 @@ public class CheckBoxPanel extends JPanel implements ItemListener {
     public void itemStateChanged(ItemEvent e) {
         if(this.checkBoxR.isSelected() && this.checkBoxG.isSelected() && this.checkBoxB.isSelected()){
             this.canvas.setColor(Color.WHITE);
+            System.out.println("Choose color is: " + "WHITE");
         }
         else if(!this.checkBoxR.isSelected() && !this.checkBoxG.isSelected() && !this.checkBoxB.isSelected()){
             this.canvas.setColor(Color.BLACK);
+            System.out.println("Choose color is: " + "BLACK");
         }
         else if(this.checkBoxR.isSelected() && this.checkBoxG.isSelected() && !this.checkBoxB.isSelected()){
             this.canvas.setColor(Color.YELLOW);
+            System.out.println("Choose color is: " + "YELLOW");
         }
         else if(this.checkBoxR.isSelected() && !this.checkBoxG.isSelected() && this.checkBoxB.isSelected()){
             this.canvas.setColor(Color.PINK);
+            System.out.println("Choose color is: " + "PINK");
         }
         else if(!this.checkBoxR.isSelected() && !this.checkBoxG.isSelected() && this.checkBoxB.isSelected()){
             this.canvas.setColor(Color.BLUE);
+            System.out.println("Choose color is: " + "BLUE");
         }
         else if(!this.checkBoxR.isSelected() && this.checkBoxG.isSelected() && !this.checkBoxB.isSelected()){
             this.canvas.setColor(Color.GREEN);
+            System.out.println("Choose color is: " + "GREEN");
         }
         else if(this.checkBoxR.isSelected() && !this.checkBoxG.isSelected() && !this.checkBoxB.isSelected()){
             this.canvas.setColor(Color.RED);
+            System.out.println("Choose color is: " + "RED");
         }
         else if(!this.checkBoxR.isSelected() && this.checkBoxG.isSelected() && this.checkBoxB.isSelected()){
             this.canvas.setColor(new Color(64,224,208));
+            System.out.println("Choose color is: " + "TURQUOISE");
         }
     }
 }
