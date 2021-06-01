@@ -13,7 +13,7 @@ public class MyCanvas1 extends JPanel implements MouseMotionListener, MouseListe
     @Getter @Setter
     private Color color;
     private Point actualPosition;
-    private ArrayList<ArrayList<Point>> listOfLines;
+    private ArrayList<Line> listOfLines;
     private ArrayList<Point> listOfPoints;
     private boolean pressed;
 
@@ -41,12 +41,14 @@ public class MyCanvas1 extends JPanel implements MouseMotionListener, MouseListe
         g.setColor(this.color);
 
         for(int i = 0; i < this.listOfLines.size(); i++){
-            for(int j = 0; j < this.listOfLines.get(i).size()-1; j++ ) {
-                g.drawLine(this.listOfLines.get(i).get(j).x, this.listOfLines.get(i).get(j).y, this.listOfLines.get(i).get(j + 1).x, this.listOfLines.get(i).get(j + 1).y);
+            for(int j = 0; j < this.listOfLines.get(i).getListOfPoints().size()-1; j++ ) {
+                g.setColor(this.listOfLines.get(i).getColor());
+                g.drawLine(this.listOfLines.get(i).getListOfPoints().get(j).x, this.listOfLines.get(i).getListOfPoints().get(j).y, this.listOfLines.get(i).getListOfPoints().get(j + 1).x, this.listOfLines.get(i).getListOfPoints().get(j + 1).y);
             }
         }
 
         for(int j = 0; j < this.listOfPoints.size()-1; j++ ) {
+            g.setColor(this.color);
             g.drawLine(this.listOfPoints.get(j).x, this.listOfPoints.get(j).y, this.listOfPoints.get(j + 1).x, this.listOfPoints.get(j + 1).y);
         }
     }
@@ -74,7 +76,7 @@ public class MyCanvas1 extends JPanel implements MouseMotionListener, MouseListe
     @Override
     public void mouseReleased(MouseEvent e) {
         this.pressed = false;
-        this.listOfLines.add(this.listOfPoints);
+        this.listOfLines.add(new Line(this.listOfPoints, this.color));
         this.listOfPoints = new ArrayList<>();
         this.repaint();
 
