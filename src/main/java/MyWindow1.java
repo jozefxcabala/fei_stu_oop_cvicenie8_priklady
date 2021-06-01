@@ -10,8 +10,8 @@ public class MyWindow1 extends JFrame {
         super(nameOfWindow);
         this.setLayout(new BorderLayout());
 
-        this.panelOfTextFields = new MyPanel1();
         this.myCanvas1 = new MyCanvas1();
+        this.panelOfTextFields = new MyPanel1(this.myCanvas1);
         this.setColorButton = new SetColorButton("Set Color", this.myCanvas1, this.panelOfTextFields);
 
         this.add(this.panelOfTextFields, BorderLayout.PAGE_START);

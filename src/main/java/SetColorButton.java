@@ -25,6 +25,9 @@ public class SetColorButton extends JButton implements ActionListener {
 
             try {
                 this.canvas.setColor(new Color(r, g, b));
+                String newString = r + "-" + g + "-" + b;
+                this.panel.getChoice().remove(3);
+                this.panel.getChoice().add(newString);
             }
             catch(IllegalArgumentException c){
                 System.out.println("RGB outside of bounderies");
